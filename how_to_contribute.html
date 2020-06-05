@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to contribute &mdash; sktime 0.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/sktime-favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/fields.css" type="text/css" />
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="About us" href="about.html" />
+    <link rel="prev" title="Changelog" href="changelog.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> sktime
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how_to_get_started.html">How to get started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to contribute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pull-request-checklist">Pull request checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filing-bugs">Filing bugs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">sktime</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>How to contribute</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="how-to-contribute">
+<span id="id1"></span><h1>How to contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to our how-to-contribute guide!</p>
+<p>If you get stuck, feel free to <a class="reference external" href="https://gitter.im/sktime/community">contact us</a> or <a class="reference external" href="https://github.com/alan-turing-institute/sktime/issues/new/choose">raise an issue</a>.</p>
+<p>sktime follows <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a>’s API whenever possible, it’ll be useful to a look at their <a class="reference external" href="https://scikit-learn.org/stable/developers/index.html">developers’ guide</a>.</p>
+<p>The preferred workflow for contributing to sktime is to fork the <a class="reference external" href="https://github.com/alan-turing-institute/sktime/">main
+repository</a> on
+GitHub, clone, and develop on a branch. Steps:</p>
+<ol class="arabic simple">
+<li><p>Fork the <a class="reference external" href="https://github.com/alan-turing-institute/sktime">project
+repository</a> by
+clicking on the ‘Fork’ button near the top right of the page. This
+creates a copy of the code under your GitHub user account. For more
+details on how to fork a repository see <a class="reference external" href="https://help.github.com/articles/fork-a-repo/">this
+guide</a>.</p></li>
+<li><p>Clone your fork of the sktime repo from your GitHub account to your
+local disk:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:YourLogin/sktime.git
+<span class="nb">cd</span> sktime
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Create a new <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch from the <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch to hold your
+changes:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout dev
+git checkout -b my-feature-branch
+</pre></div>
+</div>
+<p>Always use a <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch. It’s good practice to never work on the
+<code class="docutils literal notranslate"><span class="pre">master</span></code> branch!</p>
+<ol class="arabic simple" start="4">
+<li><p>Develop the feature on your feature branch. Add changed files using
+<code class="docutils literal notranslate"><span class="pre">git</span>&#160; <span class="pre">add</span></code> and then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> files to record your changes in
+Git:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add modified_files
+git commit
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>When finished, push the changes to your GitHub account with:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push -u origin my-feature-branch
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Follow <a class="reference external" href="https://help.github.com/articles/creating-a-pull-request-from-a-fork">these
+instructions</a>
+to create a pull request from your fork. This will send an email to
+the committers.</p></li>
+</ol>
+<p>If any of the above seems like magic to you, please look up the <a class="reference external" href="https://git-scm.com/documentation">Git
+documentation</a> on the web, or ask
+a friend or another contributor for help.</p>
+<p>To install the development version, please see our <a class="reference external" href="https://alan-turing-institute.github.io/sktime/installation.html#development-version">advanced
+installation
+instructions</a>.</p>
+<div class="section" id="pull-request-checklist">
+<h2>Pull request checklist<a class="headerlink" href="#pull-request-checklist" title="Permalink to this headline">¶</a></h2>
+<p>We recommended that your contribution complies with the following rules
+before you submit a pull request:</p>
+<ul class="simple">
+<li><p>Follow the <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a>
+coding guidelines. A good example can be found
+<a class="reference external" href="https://gist.github.com/nateGeorge/5455d2c57fb33c1ae04706f2dc4fee01">here</a>.
+In addition, we add the following guidelines:</p>
+<ul>
+<li><p>Use underscores to separate words in non-class names:
+<code class="docutils literal notranslate"><span class="pre">n_instances</span></code> rather than<code class="docutils literal notranslate"><span class="pre">ninstances</span></code>.</p></li>
+<li><p>Avoid multiple statements on one line. Prefer a line return after
+a control flow statement (<code class="docutils literal notranslate"><span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">for</span></code>).</p></li>
+<li><p>Use absolute imports for references inside sktime.</p></li>
+<li><p>Please don’t use <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">*</span></code> in any case. It is considered
+harmful by the official Python recommendations. It makes the code
+harder to read as the origin of symbols is no longer explicitly
+referenced, but most important, it prevents using a static
+analysis tool like pyflakes to automatically find bugs.</p></li>
+<li><p>Use the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard">numpy docstring
+standard</a>
+in all your docstrings.</p></li>
+</ul>
+</li>
+<li><p>Give your pull request a helpful title that summarises what your
+contribution does. In some cases <code class="docutils literal notranslate"><span class="pre">Fix</span> <span class="pre">&lt;ISSUE</span> <span class="pre">TITLE&gt;</span></code> is enough.
+<code class="docutils literal notranslate"><span class="pre">Fix</span> <span class="pre">#&lt;ISSUE</span> <span class="pre">NUMBER&gt;</span></code> is not enough.</p></li>
+<li><p>Often pull requests resolve one or more other issues (or pull
+requests). If merging your pull request means that some other
+issues/PRs should be closed, you should <a class="reference external" href="https://github.com/blog/1506-closing-issues-via-pull-requests/">use keywords to create link
+to
+them</a>
+(e.g., <code class="docutils literal notranslate"><span class="pre">Fixes</span> <span class="pre">#1234</span></code>; multiple issues/PRs are allowed as long as
+each one is preceded by a keyword). Upon merging, those issues/PRs
+will automatically be closed by GitHub. If your pull request is
+simply related to some other issues/PRs, create a link to them
+without using the keywords (e.g., <code class="docutils literal notranslate"><span class="pre">See</span> <span class="pre">also</span> <span class="pre">#1234</span></code>).</p></li>
+<li><p>All public methods should have informative docstrings with sample
+usage presented as doctests when appropriate.</p></li>
+</ul>
+</div>
+<div class="section" id="filing-bugs">
+<h2>Filing bugs<a class="headerlink" href="#filing-bugs" title="Permalink to this headline">¶</a></h2>
+<p>We use GitHub issues to track all bugs and feature requests; feel free
+to open an issue if you have found a bug or wish to see a feature
+implemented.</p>
+<p>It is recommended to check that your issue complies with the following
+rules before submitting:</p>
+<ul class="simple">
+<li><p>Verify that your issue is not being currently addressed by other
+<a class="reference external" href="https://github.com/alan-turing-institute/sktime/issues">issues</a>
+or <a class="reference external" href="https://github.com/alan-turing-institute/sktime/pulls">pull
+requests</a>.</p></li>
+<li><p>Please ensure all code snippets and error messages are formatted in
+appropriate code blocks. See <a class="reference external" href="https://help.github.com/articles/creating-and-highlighting-code-blocks">Creating and highlighting code
+blocks</a>.</p></li>
+<li><p>Please be specific about what estimators and/or functions are
+involved and the shape of the data, as appropriate; please include a
+<a class="reference external" href="https://stackoverflow.com/help/mcve">reproducible</a> code snippet
+or link to a <a class="reference external" href="https://gist.github.com">gist</a>. If an exception is
+raised, please provide the traceback.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019 - 2020, sktime developers (BSD-3-Clause License)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
